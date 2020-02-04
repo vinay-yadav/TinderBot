@@ -6,6 +6,9 @@ from secrets import *
 class TinderBot():
     def __init__(self):
         self.driver = webdriver.Chrome('/home/carlmark/PycharmProjects/TinderBot/chromedriver_79')
+        # chrome_op = webdriver.ChromeOptions()
+        # chrome_op.add_argument('--incognito')
+        # self.driver = webdriver.Chrome('/home/carlmark/PycharmProjects/TinderBot/chromedriver_79', chrome_options=chrome_op)
 
     def login(self):
         try:
@@ -34,8 +37,11 @@ class TinderBot():
             popup_1 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
             popup_1.click()
             sleep(2)
-            popup_1 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
-            popup_1.click()
+            try:
+                popup_2 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
+                popup_2.click()
+            except Exception:
+                pass
 
         except Exception:
             self.driver.close()
@@ -50,10 +56,13 @@ class TinderBot():
 
     def autoswipe(self):
         try:
+            n = 0
             while True:
                 sleep(0.5)
                 self.like()
+                n +=1
         except Exception:
+            print(n)
             self.driver.close()
 
 
