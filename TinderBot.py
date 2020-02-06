@@ -5,7 +5,7 @@ from secrets import *
 
 class TinderBot:
     def __init__(self):
-        self.driver = webdriver.Chrome('/home/carlmark/PycharmProjects/TinderBot/chromedriver_79')
+        self.driver = webdriver.Chrome()
 
     def login(self):
         date = '15'
