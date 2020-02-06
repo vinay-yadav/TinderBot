@@ -1,2 +1,2 @@
-username = '1996yadav.vinay@gmail.com'
-loginkey = 'vindroid1996'
+username = 'Enter your facebook email id'
+loginkey = 'Enter your facebook password'
