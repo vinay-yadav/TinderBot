@@ -27,8 +27,6 @@ class TinderBot:
         login_btn = self.driver.find_element_by_xpath('//*[@id="u_0_0"]')
         login_btn.click()
 
-        sleep(2)
-
         try:
             self.driver.switch_to.window(base_window)
             popup_1 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
@@ -40,10 +38,13 @@ class TinderBot:
             popup_2.click()
 
         except Exception:
+            sleep(2)
+            self.driver.switch_to.window(self.driver.window_handles[1])
+
             contbtn = self.driver.find_element_by_xpath('//*[@id="checkpointSubmitButton"]')
             contbtn.click()
 
-            sleep(2)
+            sleep(5)
 
             radio_btn = self.driver.find_element_by_xpath('//*[@id="u_3_9"]/div[2]/label[1]/span')
             radio_btn.click()
@@ -101,9 +102,9 @@ class TinderBot:
 
         except Exception:
             print(n)
-            self.driver.close()
+            # self.driver.close()
 
 
 bot = TinderBot()
 bot.login()
-bot.autoswipe()
+# bot.autoswipe()

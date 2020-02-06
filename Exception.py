@@ -3,7 +3,7 @@ from time import sleep
 from secrets import *
 
 
-class TinderBot():
+class TinderBot:
     def __init__(self):
         self.driver = webdriver.Chrome('/home/carlmark/PycharmProjects/TinderBot/chromedriver_79')
 
@@ -85,7 +85,6 @@ class TinderBot():
                 n +=1
         except Exception:
             print(n)
-            self.driver.close()
 
 
 bot = TinderBot()
